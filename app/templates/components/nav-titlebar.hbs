@@ -1,0 +1,31 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <p class="navbar-item is-uppercase">
+      {{format-navtitle this.routeName}}
+    </p>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarQuick">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarQuick" class="navbar-menu">
+    <div class="navbar-start">
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        {{#link-to "about" }}
+          <span class="icon"><i class="fa fa-search"></i></span>
+        {{/link-to}}
+        {{#link-to "about" }}
+          <span class="icon"><i class="fa fa-bolt"></i></span>
+        {{/link-to}}
+        {{#link-to "about" }}
+          <span class="icon"><i class="fa fa-github"></i></span>
+        {{/link-to}}
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,24 @@
+<div class="box has-background-grey-light">
+  <NavPagination @links={{this.meta}} />
+  <table class="table is-fullwidth">
+    <tbody>
+      {{#each @observations as |observation|}}
+        <tr>
+          <td>{{observation.resourceType}}</td>
+          <td>{{observation.id}}</td>
+          <td>{{observation.effective}}</td>
+          <td>{{moment observation.issued}}</td>
+          <td>{{observation.status}}</td>
+          <td>
+            <button {{action "zoom" observation.id}} class="button is-primary is-outlined"><span>Show</span></button>
+          </td>
+          <td>
+            <a class="button is-primary is-outlined" disabled><span>Delete</span><span class="icon is-small"><i class="fa fa-times"></i></span></a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <NavPagination @links={{this.meta}} />
+</div>
+

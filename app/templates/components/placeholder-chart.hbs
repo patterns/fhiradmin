@@ -1,0 +1,11 @@
+<svg viewBox="0 0 600 100" >
+  {{#each @segments as |seg index|}}
+    {{#if (gt seg.count 0)}}
+
+      <polyline     fill="none"     stroke-width="3"
+         stroke={{get this.stroke index}}
+         points={{get this.points index}} />
+
+    {{/if}}
+  {{/each}}
+</svg>

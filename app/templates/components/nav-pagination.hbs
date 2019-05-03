@@ -1,0 +1,37 @@
+<nav class="pagination" role="navigation" aria-label="pagination">
+  {{#if this.disablePrev}}
+    <a class="pagination-previous" disabled><span class="icon"><i class="fa fa-backward"></i></span></a>
+  {{else}}
+    <button class="pagination-previous" {{action "pagePrev"}}><span class="icon"><i class="fa fa-backward"></i></span></button>
+  {{/if}}
+  {{#if this.disableNext}}
+    <a class="pagination-next" disabled><span class="icon"><i class="fa fa-forward"></i></span></a>
+  {{else}}
+    <button class="pagination-next" {{action "pageNext"}}><span class="icon"><i class="fa fa-forward"></i></span></button>
+  {{/if}}
+  <ul class="pagination-list">
+    {{#if this.disableFirst}}
+      <li><a class="pagination-link" aria-label="Goto page {{this.pfirst}}" disabled>{{this.pfirst}}</a></li>
+    {{else}}
+      <li><button class="pagination-link" aria-label="Goto page {{this.pfirst}}" {{action "pageFirst"}}>{{this.pfirst}}</button></li>
+    {{/if}}
+    <li><span class="pagination-ellipsis">&hellip;</span></li>
+    {{#if this.bothValidDisablePrev}}
+      <li><a class="pagination-link" aria-label="Goto page {{this.pprev}}" disabled>{{this.pprev}}</a></li>
+    {{else if this.enablePrev}}
+      <li><button class="pagination-link" aria-label="Goto page {{this.pprev}}" {{action "pagePrev"}}>{{this.pprev}}</button></li>
+    {{/if}}
+    <li><a class="pagination-link is-current" aria-label="Page {{this.pself}}" aria-current="page" disabled>{{this.pself}}</a></li>
+    {{#if this.bothValidDisableNext}}
+      <li><a class="pagination-link" aria-label="Goto page {{this.pnext}}" disabled>{{this.pnext}}</a></li>
+    {{else if this.enableNext}}
+      <li><button class="pagination-link" aria-label="Goto page {{this.pnext}}" {{action "pageNext"}}>{{this.pnext}}</button></li>
+    {{/if}}
+    <li><span class="pagination-ellipsis">&hellip;</span></li>
+    {{#if this.disableLast}}
+      <li><a class="pagination-link" aria-label="Goto page {{this.plast}}" disabled>{{this.plast}}</a></li>
+    {{else}}
+      <li><button class="pagination-link" aria-label="Goto page {{this.plast}}" {{action "pageLast"}}>{{this.plast}}</button></li>
+    {{/if}}
+  </ul>
+</nav>

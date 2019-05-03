@@ -1,0 +1,36 @@
+<NavTitlebar />
+<div class="tile is-ancestor">
+  <div class="tile is-parent is-vertical is-hidden-mobile">
+    <aside class="tile is-child menu box has-background-grey-lighter">
+      <p class="menu-label has-text-weight-semibold">
+        <span class="icon"><i class="fa fa-asterisk"></i></span>
+        FHIR admin
+      </p>
+      <hr>
+      <p class="menu-label">
+        {{#link-to "dashboard" }}
+          <span class="icon"><i class="fa fa-signal"></i></span>
+          Dashboard
+        {{/link-to}}
+      </p>
+      <p class="menu-label">
+        <span class="icon"><i class="fa fa-bell"></i></span>
+        Notifications
+      </p>
+      <p class="menu-label">
+        <span class="icon"><i class="fa fa-user"></i></span>
+        User Profile
+      </p>
+      <p class="menu-label">
+        {{#link-to "tables" }}
+          <span class="icon"><i class="fa fa-table"></i></span>
+          Table List
+        {{/link-to}}
+      </p>
+    </aside>
+  </div>
+
+  <div class="tile is-parent is-10">
+    {{outlet}}
+  </div>
+</div>

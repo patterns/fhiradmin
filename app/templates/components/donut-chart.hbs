@@ -1,0 +1,15 @@
+<svg height="160" width="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+  {{#each @segments as |seg index|}}
+    {{#if (gt seg.count 0)}}
+      <circle fill="transparent" stroke-width="30"
+        cx={{this.cx}}
+        cy={{this.cy}}
+        r={{this.radius}}
+        stroke-dasharray={{this.circumference}}
+        stroke-dashoffset={{get this.offset index}}
+        transform="rotate({{get this.transform index}} {{this.cx}} {{this.cy}})" 
+        stroke={{get this.stroke index}} />
+      <text text-anchor="middle" x={{get this.textX index}} y={{get this.textY index}}>{{get this.text index}}</text>
+    {{/if}}
+  {{/each}}
+</svg>

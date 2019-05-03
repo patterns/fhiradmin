@@ -1,0 +1,19 @@
+<div class="box ">
+  <NavPagination @links={{this.meta}} />
+  <table class="table is-fullwidth">
+    <tbody>
+      {{#each @tables as |history|}}
+        <tr>
+          <td>{{history.resourceType}}</td>
+          <td>{{history.count}}</td>
+          <td>
+            <button {{action "zoom" history.id}} class="button is-primary is-outlined">
+              <span>Show</span>
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <NavPagination @links={{this.meta}} />
+</div>

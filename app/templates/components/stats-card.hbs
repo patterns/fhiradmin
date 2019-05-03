@@ -1,0 +1,10 @@
+<div class="tile is-parent">
+  {{#each @segments as |seg|}}
+    {{#if (gt seg.count 0)}}
+      <div class="tile is-child box has-background-grey">
+        <div class="title">{{seg.count}}</div>
+        <p class="is-uppercase">{{seg.resourceType}}</p> updates
+      </div>
+    {{/if}}
+  {{/each}}
+</div>
